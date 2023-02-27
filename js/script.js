@@ -25,36 +25,36 @@ console.log(emailVerificate)
 //creazione variabili
 let emailContainerEl = document.getElementById("email-container");
 let emailButtonEl = document.getElementById("email-button");
+let newEl;
+let annullaEl = document.getElementById("annulla");
+let controllo;
+
+
 
 //aggiungi un evento click al bottone
 emailButtonEl.addEventListener("click", function(){
 
+
+
+
+
+ controllo = false ; 
+ console.log(controllo); 
+
 //memorizzo l'email inserita dall'utente
-let emailinseritaEl = document.getElementById("email").value
-console.log(emailinseritaEl)   
+let emailInseritaEl = document.getElementById("email").value;
+console.log(emailInseritaEl)  ;
 
 
 
     for(let i = 0; i < emailVerificate.length; i++){
-        
         console.log(emailVerificate[i])
 
         
+        if (emailInseritaEl == emailVerificate[i]){
 
-        if(emailinseritaEl == emailVerificate[i]){
-            let newEl = document.createElement("p")
-            newEl.innerText = "true"
-            console.log(newEl.innerText)
-            emailContainerEl.append(newEl)
-            
-
-        } else {(emailinseritaEl != emailVerificate[i])
-            let newEl = document.createElement("p")
-            newEl.innerText = "false"
-            console.log(newEl.innerText)
-            emailContainerEl.append(newEl)
-            
-            
+            controllo = true;
+            console.log(controllo)
         }
         
         
@@ -64,9 +64,20 @@ console.log(emailinseritaEl)
     }     
         
         
+if(controllo == true){
+     
+    newEl = document.createElement("div");
+    newEl.innerText = "accesso consentito";
+    newEl.classList.add("newEl")
+    emailContainerEl.appendChild(newEl);
+} else {(controllo == false)
+     
+    newEl = document.createElement("div");
+    newEl.innerText = "Accesso negato";
+    newEl.classList.add("newEl")
+    emailContainerEl.appendChild(newEl);
     
+}
 
 
 })
-
-
