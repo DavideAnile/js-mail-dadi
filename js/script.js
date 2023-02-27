@@ -10,6 +10,9 @@ stampa un messaggio appropriato sull’esito del controllo.
 -crea una costante array di email
 -creazione variabili
 -aggiungi un evento click al bottone impostando il valore della variabile controllo in "false"
+-memorizzo l'email inserita dall'utente
+? SE l'email a valore ""
+    °mostra alert "inserisci email"
 -crea un ciclo for
 ? SE l'email dell'input è uguale al contenuto della costante
     °il valore della variabile controllo diventa "true"
@@ -41,9 +44,18 @@ emailButtonEl.disabled = "disabled"
 
 
 //memorizzo l'email inserita dall'utente
-    let emailInseritaEl = document.getElementById("email").value;
-    console.log(emailInseritaEl)  ;
+let emailInseritaEl = document.getElementById("email").value;
+console.log(emailInseritaEl)  ;
+
+
+//? SE l'email a valore ""
+//    °mostra alert "inserisci email"
+if(emailInseritaEl === ""){
+    alert("CLICCA RIPROVA E INSERISCI UNA MAIL VALIDA !")
     
+}
+    
+//crea ciclo for   
     for(let i = 0; i < emailVerificate.length; i++){
         console.log(emailVerificate[i])
 
@@ -56,17 +68,15 @@ emailButtonEl.disabled = "disabled"
         
     }     
     
-    /*? SE il valore di controllo è "true"
+/*? SE il valore di controllo è "true"
         °stampa accesso consentito */
-    if(controllo == true){
+if(controllo == true){
+    let newEl = document.createElement("div");
+    newEl.innerText = "Accesso Consentito !";
+    newEl.classList.add("newEl")
+    resultContainerEl.appendChild(newEl);
+    newEl.style.color = "green"
          
-        let newEl = document.createElement("div");
-        newEl.innerText = "Accesso Consentito !";
-        newEl.classList.add("newEl")
-        resultContainerEl.appendChild(newEl);
-        newEl.style.color = "green"
-    
-    
     /* : ALTRIMENTI
         °stampa accesso negato */
     } else {(controllo == false)
@@ -80,7 +90,9 @@ emailButtonEl.disabled = "disabled"
     }
     
     
-    });
+});
+    
+    
 
 
 
