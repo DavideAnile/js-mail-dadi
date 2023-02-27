@@ -28,7 +28,7 @@ const emailVerificate = ["davide@gmail.com", "pippo@gmail.com", "anna@gmail.com"
 console.log(emailVerificate)
 
 //creazione variabili
-let emailContainerEl = document.getElementById("email-container");
+let resultContainerEl = document.getElementById("result-container");
 let emailButtonEl = document.getElementById("email-button");
 let controllo;
 
@@ -61,9 +61,10 @@ emailButtonEl.disabled = "disabled"
     if(controllo == true){
          
         let newEl = document.createElement("div");
-        newEl.innerText = "accesso consentito";
+        newEl.innerText = "Accesso Consentito !";
         newEl.classList.add("newEl")
-        emailContainerEl.appendChild(newEl);
+        resultContainerEl.appendChild(newEl);
+        newEl.style.color = "green"
     
     
     /* : ALTRIMENTI
@@ -71,9 +72,10 @@ emailButtonEl.disabled = "disabled"
     } else {(controllo == false)
          
         let newEl = document.createElement("div");
-        newEl.innerText = "Accesso negato";
+        newEl.innerText = "Accesso Negato !";
         newEl.classList.add("newEl")
-        emailContainerEl.appendChild(newEl);
+        resultContainerEl.appendChild(newEl);
+        newEl.style.color = "red"
         
     }
     
@@ -105,7 +107,9 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto. */
 
     
        
-        
+   
+let images = ["https://img.freepik.com/premium-vector/you-win-lettering-pop-art-text-banner_185004-60.jpg" , "https://previews.123rf.com/images/lkeskinen/lkeskinen1612/lkeskinen161210351/68303662-you-lose-rubber-stamp.jpg" , "https://logos.flamingtext.com/City-Logos/Draw-Logo.png" ]
+
         
 // - creo varibili bottoni        
 let launchButtonEl = document.getElementById("launchButton")
@@ -138,7 +142,13 @@ launchButtonEl.addEventListener("click", function(){
                  let risultato = document.createElement("div")
                  risultato.innerText = "Il pc Ha vinto"
                  numberContainerEl.appendChild(risultato)
+                 let imageEl = document.createElement("img")
+                 imageEl.src = images[1]
+                 imageEl.style.height = "150px"
+                 
+                 numberContainerEl.appendChild(imageEl)
 
+                 
 
  //:? ALTRIMENTI SE il numero generato dal pc è minore di quello dell'utente
  //         °il pc perde                
@@ -147,6 +157,10 @@ launchButtonEl.addEventListener("click", function(){
                 let risultato = document.createElement("div")
                  risultato.innerText = "L'utente Ha vinto"
                  numberContainerEl.appendChild(risultato)
+                 let imageEl = document.createElement("img")
+                 imageEl.src = images[0]
+                 imageEl.style.height = "150px"
+                 numberContainerEl.appendChild(imageEl)
             
 //   :ALTRIMENTI
 //    °rigioca         
@@ -154,6 +168,10 @@ launchButtonEl.addEventListener("click", function(){
                 let risultato = document.createElement("div")
                  risultato.innerText = "Parità"
                  numberContainerEl.appendChild(risultato)
+                 let imageEl = document.createElement("img")
+                 imageEl.src = images[2]
+                 imageEl.style.height = "150px"
+                 numberContainerEl.appendChild(imageEl)
             }
             
             

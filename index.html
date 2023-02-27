@@ -8,30 +8,41 @@
     <title>Document</title>
 </head>
 <body>
-    
-<div id="email-container">
-    <label for="email"></label>
-    <input type="email" id="email">
-</div>
+ <section class="first-sect">
 
-    <button id="email-button">ACCEDI</button>
-    <button type="button" id="annulla" onclick="window.location.reload()">RIPROVA</button>
+     <div id="email-container">
+         <label for="email"></label>
+         <input type="email" id="email">
+     </div>
+     <div id="result-container"></div>
+     <div id="first-buttons">
+         <button id="email-button">ACCEDI</button>
+         <button type="button" id="annulla" onclick="window.location.reload()">RIPROVA</button>
+    </div>
+
+ </section>   
 
 
     <hr>
-<div id="number-container">
-    <div id="userContainer">
-        <label for="userNumber"></label>
-        <input id="userNumber">
-    </div>
-    <div id="pcContainer">
-        <label for="pcNumber"></label>
-        <input id="pcNumber">
-    </div>
-</div>
 
-    <button id="launchButton">GENERA</button>
-    <button id="reset-button" onclick="window.location.reload()">AZZERA</button>
+ <section class="second-sect">
+     <div id="number-container">
+         <div id="userContainer">
+             <label for="userNumber"></label>
+             <input id="userNumber" placeholder="Utente">
+         </div>
+         <div id="pcContainer">
+             <label for="pcNumber"></label>
+             <input id="pcNumber" placeholder="PC">
+         </div>
+     </div>
+     <div id="second-buttons">
+         <button id="launchButton">GENERA</button>
+         <button id="reset-button" onclick="window.location.reload()">AZZERA</button>
+    </div>
+
+
+ </section>   
 
     <script type="text/javascript" src="js/script.js"></script>
 </body>
